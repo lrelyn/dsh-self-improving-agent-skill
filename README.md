@@ -1,8 +1,28 @@
 # Self-Improving Agent
 
+English | [简体中文](README.zh-CN.md)
+
 This repository provides a tool-agnostic self-improving protocol for AI coding agents.
 
+**Zero dependencies** — no plugins, npm/pip packages, database, server, or Docker. It is just Markdown files plus an AI tool you already use. See [Requirements](#requirements).
+
 **Read and follow [AGENTS.md](AGENTS.md).**
+
+## Requirements
+
+**Nothing beyond a text file and an AI tool.**
+
+| Item | Needed? |
+|---|---|
+| Plugins / extensions | ❌ No |
+| npm / pip packages | ❌ No |
+| Database | ❌ No |
+| Server / Docker | ❌ No |
+| Network access | ❌ No |
+| An AI coding tool (Claude Code / Codex / Cursor / Gemini CLI / Copilot / Windsurf / …) | ✅ Yes — whichever you already use |
+| A text editor | ✅ Yes |
+
+This is a pure-instruction repository: Markdown files that the agent reads. There is no code to build or run.
 
 ## Install
 

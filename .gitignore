@@ -4,6 +4,9 @@ AGENT_MEMORY.md
 REFLECTIONS.md
 _reflections/
 
+# 例外：examples 下的样例要发布
+!examples/AGENT_MEMORY.md
+
 # --- 敏感数据：绝不提交 ---
 .env
 .env.*
