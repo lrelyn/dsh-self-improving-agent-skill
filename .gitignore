@@ -1,13 +1,18 @@
-# --- 敏感/私有数据：绝不提交 ---
+# --- 私有经验库：默认不入库（含本机路径/教训） ---
+AGENT_MEMORY.md
+.agent-memory/
+REFLECTIONS.md
+_reflections/
+
+# --- 敏感数据：绝不提交 ---
 .env
 .env.*
 !.env.example
 *.key
 *.pem
-
-# --- 本机经验库（含本地路径/配置，不公开） ---
-REFLECTIONS.md
-_reflections/
+*.p12
+credentials.json
+tokens.json
 
 # --- 系统与编辑器 ---
 .DS_Store
@@ -15,9 +20,11 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
+*.swp
 
-# --- 依赖与构建产物（如后续加入） ---
+# --- 依赖与构建产物 ---
 node_modules/
 dist/
 build/
+out/
 *.log

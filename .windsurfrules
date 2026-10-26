@@ -1,0 +1,9 @@
+# Self-Improving Agent
+
+Follow the protocol in AGENTS.md.
+
+- Read AGENT_MEMORY.md before starting a task; append an entry after finishing.
+- Judge results objectively (exit codes, files present, tests passing).
+- Verify before claiming completion.
+
+Memory file: AGENT_MEMORY.md in the project root, or ~/.agent-memory/AGENT_MEMORY.md for global scope.

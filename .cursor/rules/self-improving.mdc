@@ -1,0 +1,17 @@
+---
+description: Self-improving agent protocol — reflect, codify, reuse
+globs:
+alwaysApply: true
+---
+
+# Self-Improving Agent
+
+Follow the protocol in `AGENTS.md`.
+
+Core rules:
+- Before a task: skim `AGENT_MEMORY.md` for relevant prior lessons.
+- After a task: append one entry (Worked / Failed / Next time / Reusable).
+- Judge results objectively — exit codes, files present, tests passing — not a subjective "looks done".
+- Verify before claiming completion.
+
+Memory file: `AGENT_MEMORY.md` in the project root (or `~/.agent-memory/AGENT_MEMORY.md` for global scope). Create it if missing.

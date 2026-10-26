@@ -1,46 +1,43 @@
-# dsh-self-improving-agent-skill
+# Self-Improving Agent
 
-DeepSeek Harness 的「自我改进型智能体」技能（Skill），把单个任务做得更稳、把经验跨会话积累下来。
+This repository provides a tool-agnostic self-improving protocol for AI coding agents.
 
-## 这是什么
+**Read and follow [AGENTS.md](AGENTS.md).**
 
-一个可复用的 DSH 本地技能，核心工作循环：**执行 → 观察 → 反思 → 固化 → 复用**。
+## Install
 
-适用于：
-- 任务失败或反复出问题，需要找根因并避免重犯
-- 做完一个重要/长任务后沉淀经验
-- 跨会话做同一类工作，希望越做越稳
+Pick the entry file for your tool — all of them point to the same protocol:
 
-## 安装
+| Tool | Entry file | Where to put it |
+|---|---|---|
+| Claude Code | `CLAUDE.md` | project root |
+| Codex / generic agents | `AGENTS.md` | project root |
+| Cursor | `.cursor/rules/self-improving.mdc` | project root |
+| Gemini CLI | `GEMINI.md` | project root |
+| Windsurf | `.windsurfrules` | project root |
+| GitHub Copilot | `.github/copilot-instructions.md` | project root |
+| Any other agent | paste `AGENTS.md` into its system/custom instructions | — |
 
-把 `SKILL.md` 放入 DSH 全局技能目录：
+For a **global** install (applies to every project):
 
-```
-<DSH_HOME>/skills/self-improving-agent/SKILL.md
-```
+- Claude Code: `~/.claude/CLAUDE.md`
+- Codex: `~/.codex/AGENTS.md`
+- Cursor: Settings → Rules → User Rules
+- Gemini CLI: `~/.gemini/GEMINI.md`
 
-（`<DSH_HOME>` 默认 `~/.dsh`，Windows 下为 `C:\Users\<用户名>\.dsh`）
+## Memory
 
-同时创建全局经验库：
+The protocol stores lessons in `AGENT_MEMORY.md`:
 
-```
-<DSH_HOME>/skills/_reflections/REFLECTIONS.md
-```
+- project scope → `AGENT_MEMORY.md` in the project root
+- global scope → `~/.agent-memory/AGENT_MEMORY.md`
 
-## 结构
+Keep one memory file per scope. `AGENT_MEMORY.md` is git-ignored by default — it holds machine-local lessons.
 
-```
-self-improving-agent/
-└── SKILL.md        # 技能指令（本文件）
-```
+## What it does
 
-- **SKILL.md**：自我改进工作流指令
-- **REFLECTIONS.md**（另建）：跨会话共享的唯一经验库，各会话往里追加复盘
+Applies **Act → Observe → Reflect → Codify → Reuse** to every real task, plus a mandatory self-verification checklist before claiming work is done. It does not make a model smarter; it makes the same model stop repeating mistakes by accumulating memory, tools, and verification.
 
-## 使用
-
-DSH 在情境匹配到"自我改进 / 复盘 / 固化经验"时会加载此 skill。加载后按其中的「任务执行协议」执行。
-
-## 授权
+## License
 
 MIT
