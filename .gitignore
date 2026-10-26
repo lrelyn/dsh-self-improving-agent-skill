@@ -1,0 +1,23 @@
+# --- 敏感/私有数据：绝不提交 ---
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# --- 本机经验库（含本地路径/配置，不公开） ---
+REFLECTIONS.md
+_reflections/
+
+# --- 系统与编辑器 ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# --- 依赖与构建产物（如后续加入） ---
+node_modules/
+dist/
+build/
+*.log
